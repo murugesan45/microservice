@@ -24,6 +24,7 @@ public class Controller {
 		return "working";
 	}
 	
+	@SuppressWarnings("rawtypes")
 	@PostMapping("/register")
 	public ResponseEntity createUser(@Valid @RequestBody UserRequestModel userDetails) {
 	   userService.post(userDetails);

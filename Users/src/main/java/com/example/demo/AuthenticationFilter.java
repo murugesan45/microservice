@@ -22,7 +22,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import demo.microservice.inter.UsersService;
 import demo.microservice.model.LoginRequestModel;
 import demo.microservice.model.UserRequestModel;
-import demo.microservice.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
