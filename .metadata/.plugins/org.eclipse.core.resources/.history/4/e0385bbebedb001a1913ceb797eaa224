@@ -1,0 +1,8 @@
+server.port = 8011
+spring.application.name = ZuulGateway
+spring.client.serviceUrl.defaultZone  = http://localhost:8761/eureka
+spring.devtools.restart.enabled = true
+
+
+api.login.url.path = /users/login
+

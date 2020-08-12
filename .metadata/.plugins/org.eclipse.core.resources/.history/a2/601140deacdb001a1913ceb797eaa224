@@ -1,0 +1,15 @@
+package demo.microservice.service;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	
+	BCryptPasswordEncoder  bCryptPasswordEncoder;
+	
+	public void userService(BCryptPasswordEncoder  bCryptPasswordEncoder ) {
+		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+	}
+
+}

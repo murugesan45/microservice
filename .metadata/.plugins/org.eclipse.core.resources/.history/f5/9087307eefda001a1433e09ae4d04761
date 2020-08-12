@@ -1,0 +1,5 @@
+package demo.microservice.controller;
+
+public class Controller {
+
+}

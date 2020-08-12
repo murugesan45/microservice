@@ -1,0 +1,11 @@
+package demo.microservice.model;
+
+public class UserRequestModel {
+	
+	private String fistName;
+	private String lastName;
+	private String password;
+	private String email;
+	
+
+}
