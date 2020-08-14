@@ -3,6 +3,8 @@ package demo.microservice.service;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,7 +27,7 @@ public class UserService implements UsersService {
     @Autowired
     private EmployeeClient client;
 	
-	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	public void userService(BCryptPasswordEncoder  bCryptPasswordEncoder ) {
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
@@ -62,6 +64,8 @@ public class UserService implements UsersService {
 	
 	
 	public Optional<Employee> getEmployees(long id) {
+		
+		logger.info("feign client method ");
 		return client.getEmployees(id);
 		
 	}

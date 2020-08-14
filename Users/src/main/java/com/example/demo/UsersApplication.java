@@ -5,15 +5,18 @@ import org.springframework.boot.SpringApplication;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-//@EnableFeignClients
+
+import feign.Logger;
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableCircuitBreaker
 @ComponentScan(basePackages = { "demo.microservice.controller" })
 @EntityScan(basePackages = { "demo.microservice.model" })
 @ComponentScan(basePackages = { "demo.microservice.service" })
@@ -24,10 +27,15 @@ public class UsersApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UsersApplication.class, args);
 	}
-    @Bean	
+   
+	@Bean	
 	public BCryptPasswordEncoder  bCryptPasswordEncoder() {
 		
 		return new BCryptPasswordEncoder();
+	}
+	@Bean
+	Logger.Level feignLogger(){
+		return Logger.Level.FULL;
 	}
 
 }
