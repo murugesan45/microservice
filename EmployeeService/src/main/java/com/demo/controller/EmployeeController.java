@@ -26,7 +26,6 @@ public class EmployeeController {
 	
 	@GetMapping("/{id}")
 	public Optional<Employee> findById(@PathVariable("id") Long id) {
-		System.out.println("+++++++++++++++++++" + id);
 		return repo.findById(id);
 	}
 	

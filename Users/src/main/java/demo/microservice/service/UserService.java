@@ -1,6 +1,7 @@
 package demo.microservice.service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -9,9 +10,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-
-
 import demo.microservice.inter.UsersService;
+import demo.microservice.model.Employee;
 import demo.microservice.model.UserRequestModel;
 import demo.microservice.repository.Repo;
 
@@ -22,6 +22,10 @@ public class UserService implements UsersService {
 	private Repo repo;
 	@Autowired
 	private BCryptPasswordEncoder  bCryptPasswordEncoder;
+    @Autowired
+    private EmployeeClient client;
+	
+	
 	
 	public void userService(BCryptPasswordEncoder  bCryptPasswordEncoder ) {
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
@@ -56,5 +60,10 @@ public class UserService implements UsersService {
 		return user;
 	}
 	
+	
+	public Optional<Employee> getEmployees(long id) {
+		return client.getEmployees(id);
+		
+	}
 
 }
