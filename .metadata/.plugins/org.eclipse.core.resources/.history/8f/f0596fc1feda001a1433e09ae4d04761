@@ -1,8 +1,0 @@
- package demo.microservice.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-@JpaRepository
-public interface Repository extends JpaRepository {
-
-}

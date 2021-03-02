@@ -1,5 +1,0 @@
-package demo.microservice.service;
-
-public class UserService {
-
-}

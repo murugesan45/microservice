@@ -1,5 +1,0 @@
-package demo.microservice.inter;
-
-public interface UsersService {
-
-}

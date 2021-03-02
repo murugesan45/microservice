@@ -1,5 +1,0 @@
-package demo.microservice.repository;
-
-public interface Repository {
-
-}

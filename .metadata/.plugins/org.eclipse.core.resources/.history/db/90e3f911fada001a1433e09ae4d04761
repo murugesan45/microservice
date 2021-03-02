@@ -1,5 +1,0 @@
-package demo.microservice.model;
-
-public class UserRequestModel {
-
-}
